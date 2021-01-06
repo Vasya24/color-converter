@@ -1,3 +1,8 @@
 .color {
     border: none;
+    border-radius: 10px;
+    filter: drop-shadow(0 0 10px #000);
+    display: block;
+    margin: 40vh auto 0 auto;
+    line-height: 32px;
 }

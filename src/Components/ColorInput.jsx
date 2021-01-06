@@ -1,17 +1,21 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-function ColorInput() {
-    const handleSubmit = e => {
-        e.preventDefault()
-        let inp = document.querySelector('input');
-        document.body.style.backgroundColor = inp.value;
+class ColorInput extends Component {
+
+    handleChange = e => {
+        document.body.style.backgroundColor = e.target.value;
+        if (e.target.value.length !== 7) {
+            document.body.style.backgroundColor = '#fff';
+        }
     }
-    return (
-        <form onSubmit={handleSubmit}>
-            <input className='color' type='text' placeholder='#lololo' />
-            <button type='submit'>Задать фон</button>
-        </form>
-    );
+
+    render() {
+        return (
+            <form>
+                <input type="text" onChange={this.handleChange} placeholder="#lololo" className='color'/>
+            </form>
+        );
+    }
 }
 
 export default ColorInput;
